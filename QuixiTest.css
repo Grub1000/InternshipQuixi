@@ -1,0 +1,160 @@
+.AbsoluteWrapper{
+    margin: auto;
+    width: 370px;
+    height: 670px;
+    background-color: cornsilk;
+}
+.HeaderWrapper{
+    display: grid;
+    grid-template-columns: 50px 270px 50px;
+    width: 370px;
+    height: 50px;
+    margin-bottom: 15px;
+    background-color: darkorange;
+}
+.Back{
+    background-color: rgb(245, 176, 91);
+}
+.BackIcon{
+    position: relative;
+    top: 8px;
+    left: 12px;
+    width: 24px;
+    transition: color .1s ease;
+}
+.BackIcon:hover{
+    color: red;
+}
+.HeaderInfoWrapper{
+    background-color:rgb(245, 176, 91);
+}
+.HeaderInfoOne{
+    width: 160px;
+    margin: auto;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+.HeaderInfoTwo{
+    width: 144px;
+    margin: auto;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: white;
+}
+.Exit{
+    background-color: rgb(245, 176, 91);
+}
+.ExitIcon{
+    position: relative;
+    top: 8px;
+    left: 12px;
+    width: 24px;
+    transition: color .1s ease;
+}
+.ExitIcon:hover{
+    color: red;
+}
+.ParagraphOne{
+    width: 350px;
+    height: 250px;
+    margin: auto;
+    color: rgb(247, 166, 67);
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+}
+.ParagraphTwo{
+    width: 350px;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 15px;
+    color: rgb(247, 166, 67);
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+
+}
+.ParagraphThree{
+    width: 350px;
+    height: 50px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 10px;
+    color: rgb(247, 166, 67);
+}
+.InputOne{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 2px solid  rgb(255, 172, 71);
+    background-color:cornsilk;
+}
+.InputOne:focus{
+    outline: none;
+}
+.ColorMessage{
+    float: left;
+    width: 300px;
+    height: 20px;
+    margin: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    color: rgb(247, 166, 67);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+}
+.ColorSelection{
+    position: relative;
+    float: right;
+    width: 50px;
+    right: 190px;
+    top: 1px;
+
+}
+.ColorSelect{
+    border-style: none;
+    background-color: cornsilk;
+}
+.ColorSelect:focus{
+    outline-style: none;
+}
+.ColorSelect:hover{
+    outline: darkgoldenrod 1px solid;
+}
+.WelcomeMessage{
+    width: 350px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 50px;
+    color: rgb(247, 166, 67);
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+}
+
+.SignatureWrapper{
+    width: 320px;
+    height: 70px;
+    margin: auto;
+}
+.SignatureCanvas{
+    background-color: white;
+}
+.SubmitButton{
+    border-radius: 5%;
+    border-style: none;
+    position: relative;
+    top: -24px;
+    width: 100px;
+    height: 62px;
+    color: white;
+    background-color: darksalmon;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    transition: background-color .6s ease;
+}
+.SubmitButton:focus{
+    outline: 2px solid rgb(250, 206, 152);
+}
+.SubmitButton:hover{
+    background-color: rgb(247, 166, 67);
+}

@@ -1,0 +1,81 @@
+<!-- DISCLAIMER: The code below was not tested with a backend during development so some things might not be fully functional quite yet -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/QuixiTest.css">
+    <script src="https://kit.fontawesome.com/085d385585.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Covid Form</title>
+</head>
+
+<body>
+    <div class="AbsoluteWrapper">
+        <div class="HeaderWrapper">
+            <div class="Back"><i class="fas fa-angle-left fa-2x BackIcon"></i></div>
+            <div class="HeaderInfoWrapper">
+                <div class="HeaderInfoOne">COVID-19 CONTRACT</div>
+                <div class="HeaderInfoTwo">CONTRACT - ATTESTATION</div>
+            </div>
+            <div class="Exit"><i class="fas fa-times fa-2x ExitIcon"></i></div>
+        </div>
+        <div class="ParagraphOne">By completing this letter, I attest that the answers provided in completing this
+            screening
+            tool and assessment
+            were truthful and complete. I understand the contagious nature of COVID-19 and the risk associated with
+            serious
+            illness in the elderly. I have completed this screening nad will inform the facility administrator or
+            supervisor
+            should I experience any symptoms during my shift or visit inside this facility.</div>
+        <div class="ParagraphTwo">
+            As a legal record of completing the COVID-19 screening, I am attesting to the truthfulness and completeness
+            of
+            my ansers prior to entry at Woodbridge on 10/11/20.
+        </div>
+        <!-- Since the endpoints dont actually exist, I just put the first endpoint in action atribute -with no csrftoken of course -->
+        <form action="https://www.quixi.com/internship-form" class="MainForm">
+            <div class="ParagraphThree">
+                Type your full name as a legal
+                record of completing COVID-19 screening:
+                <input name="name" class="InputOne" type="text" placeholder="Retype Name (asdf)">
+            </div>
+            <div class="ColorMessage">Choose a color:</div>
+            <div class="ColorSelection">
+                <select name="color" id="color" class="ColorSelect">
+                    <option value="">None</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                </select>
+            </div>
+            <div class="WelcomeMessage">Welcome to Woodbridge</div>
+            <div class="SignatureWrapper">
+                <header style="font-family: 'Barlow', sans-serif;color:rgb(247, 166, 67)">E-Signature: </header>
+                <canvas name="ESignature" height="60px" width="200px" style="border: 1px solid orange;"
+                    class="SignatureCanvas"></canvas>
+                <input type="Submit" class="SubmitButton" value="Done">
+            </div>
+
+        </form>
+
+
+    </div>
+    <script src="/QuixiTest.js"></script>
+    <!-- Given the particular backends port, we may need to use some CORS header library to enable calls through an inhouse api. -->
+    <script>
+        let image_url = signaturePad.toDataURL();
+        $.ajax({
+            type: "POST",
+            url: "https://www.quixi.com/signature_data",
+            data: {
+                image_data: image_url
+            }
+        });
+    </script>
+</body>
+
+</html>
